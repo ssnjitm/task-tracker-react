@@ -1,13 +1,24 @@
-import { useState } from 'react'
-
-import './App.css'
+import React from 'react'
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom'
+import Dashboard from './pages/Dashboard'
+import Tasks from './pages/Tasks'
+import Calendar from './pages/Calender'
+import Reports from './pages/Reports'
+import Layout from './components/common/Layout'
 
 function App() {
-
   return (
-    <>
-<h1>new task tracker app</h1>
-    </>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Navigate to="/dashboard" replace />} />
+          <Route path="dashboard" element={<Dashboard />} />
+          <Route path="tasks" element={<Tasks />} />
+          <Route path="calendar" element={<Calendar />} />
+          <Route path="reports" element={<Reports />} />
+        </Route>
+      </Routes>
+    </Router>
   )
 }
 
