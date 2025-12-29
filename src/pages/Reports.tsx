@@ -8,11 +8,7 @@ import { FcHighPriority } from "react-icons/fc";
 import { FaFilePdf } from "react-icons/fa";
 import { FaFileCsv } from "react-icons/fa6";
 import { PiMicrosoftExcelLogoDuotone } from "react-icons/pi";
-
-
-
-
-
+import { FaSpinner } from "react-icons/fa"; // Add spinner icon
 
 const Reports: React.FC = () => {
   const [tasks, setTasks] = useState<Task[]>([])
@@ -32,6 +28,18 @@ const Reports: React.FC = () => {
     } finally {
       setLoading(false)
     }
+  }
+
+  // Show loading spinner
+  if (loading) {
+    return (
+      <div className="flex items-center justify-center h-screen">
+        <div className="text-center">
+          <FaSpinner className="animate-spin text-4xl text-blue-600 mx-auto mb-4" />
+          <p className="text-gray-600">Loading reports...</p>
+        </div>
+      </div>
+    )
   }
 
   const stats = {

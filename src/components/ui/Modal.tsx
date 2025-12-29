@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react'
 
+// Define all interfaces
 interface ModalProps {
   isOpen: boolean
   onClose: () => void
@@ -11,7 +12,55 @@ interface ModalProps {
   children: React.ReactNode
 }
 
-const Modal: React.FC<ModalProps> = ({
+interface ModalBodyProps {
+  children: React.ReactNode
+  className?: string
+}
+
+interface ModalFooterProps {
+  children: React.ReactNode
+  justify?: 'start' | 'center' | 'end' | 'between'
+  className?: string
+}
+
+// Create the ModalBody component
+const ModalBody: React.FC<ModalBodyProps> = ({ children, className = '' }) => {
+  return (
+    <div className={className}>
+      {children}
+    </div>
+  )
+}
+
+// Create the ModalFooter component
+const ModalFooter: React.FC<ModalFooterProps> = ({
+  children,
+  justify = 'end',
+  className = '',
+}) => {
+  const justifyClasses = {
+    start: 'justify-start',
+    center: 'justify-center',
+    end: 'justify-end',
+    between: 'justify-between',
+  }
+  
+  return (
+    <div
+      className={`
+        mt-6 pt-6 border-t border-gray-200
+        flex items-center gap-3
+        ${justifyClasses[justify]}
+        ${className}
+      `}
+    >
+      {children}
+    </div>
+  )
+}
+
+// Create the main Modal component
+const ModalComponent: React.FC<ModalProps> = ({
   isOpen,
   onClose,
   title,
@@ -111,50 +160,10 @@ const Modal: React.FC<ModalProps> = ({
   )
 }
 
-// Modal Body Component
-interface ModalBodyProps {
-  children: React.ReactNode
-  className?: string
-}
-
-const ModalBody: React.FC<ModalBodyProps> = ({ children, className = '' }) => {
-  return (
-    <div className={className}>
-      {children}
-    </div>
-  )
-}
-
-interface ModalFooterProps {
-  children: React.ReactNode
-  justify?: 'start' | 'center' | 'end' | 'between'
-  className?: string
-}
-
-const ModalFooter: React.FC<ModalFooterProps> = ({
-  children,
-  justify = 'end',
-  className = '',
-}) => {
-  const justifyClasses = {
-    start: 'justify-start',
-    center: 'justify-center',
-    end: 'justify-end',
-    between: 'justify-between',
-  }
-  
-  return (
-    <div
-      className={`
-        mt-6 pt-6 border-t border-gray-200
-        flex items-center gap-3
-        ${justifyClasses[justify]}
-        ${className}
-      `}
-    >
-      {children}
-    </div>
-  )
+// Create the compound component by attaching subcomponents
+const Modal = ModalComponent as React.FC<ModalProps> & {
+  Body: typeof ModalBody
+  Footer: typeof ModalFooter
 }
 
 // Attach subcomponents
