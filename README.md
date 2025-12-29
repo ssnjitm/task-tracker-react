@@ -1,73 +1,49 @@
-# React + TypeScript + Vite
+# Task Paatro 📝
+A modern, responsive task management application built with React, TypeScript, and Vite. This application helps you organize, track, and manage your daily tasks efficiently with an intuitive user interface.
+<div align="center">
+https://img.shields.io/badge/React-18.2.0-61DAFB?logo=react&logoColor=white
+https://img.shields.io/badge/TypeScript-5.0.0-3178C6?logo=typescript&logoColor=white
+https://img.shields.io/badge/Vite-4.4.5-646CFF?logo=vite&logoColor=white
+https://img.shields.io/badge/Tailwind_CSS-3.3.3-06B6D4?logo=tailwind-css&logoColor=white
+https://img.shields.io/badge/License-MIT-yellow.svg
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, intuitive task management application built with React, TypeScript, and Tailwind CSS. Stay organized and boost your productivity with this sleek task tracker.
 
-Currently, two official plugins are available:
+https://img.shields.io/badge/Live_Demo-FF5722?style=for-the-badge&logo=vercel&logoColor=white
+https://img.shields.io/badge/Report_Bug-FF0000?style=for-the-badge&logo=github&logoColor=white
+https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=for-the-badge
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+</div>
+<img width="1886" height="1140" alt="image" src="https://github.com/user-attachments/assets/7bfa9fc3-f2d1-4d7c-bdb6-525d1c381d7f" />
 
-## React Compiler
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+# ✨ Features
+Task Management: Create, edit, and delete tasks
 
-## Expanding the ESLint configuration
+Task Status: Mark tasks as completed/incomplete
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Responsive Design: Works seamlessly on desktop, tablet, and mobile
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+Modern UI: Clean interface built with Tailwind CSS
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+Type Safety: Full TypeScript support for better development experience
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+# 🚀 Live Demo
+[Add your live demo link here]
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+# 📸 Screenshots
+<div align="center"> <table> <tr> <td align="center"> <strong>Light Mode</strong><br/> <img src="https://github.com/user-attachments/assets/805468f1-27e6-4ef7-ae0c-09ed948ffd68" alt="Task Tracker Light Mode" width="100%" /> </td> <td align="center"> <strong>Dark Mode</strong><br/> <img src="https://github.com/user-attachments/assets/01374c48-79a1-4482-9b18-ceb592dce279" alt="Task Tracker Dark Mode" width="100%" /> </td> <td align="center"> <strong>Mobile View</strong><br/> <img src="https://github.com/user-attachments/assets/5a3f95e6-b02a-4cdb-9baa-10d5fd29f72a" alt="Task Tracker Mobile" width="100%" /> </td> </tr> </table> </div>
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+
+
+🛠️ Tech Stack
+React 18 - Frontend library
+
+TypeScript - Type safety
+
+Vite - Build tool and development server
+
+Tailwind CSS - Styling framework
+
+ESLint - Code linting
